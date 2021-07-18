@@ -42,8 +42,8 @@ function init(hourStart, hourEnd) {
 			$(descriptionElement).find("textarea").text(timeBlockExistingDescription);
 		}
 
-		// Build the HTML element for the save "button" (icon).
-		let saveElement = $("<div>")
+		// Build the HTML element for the save button.
+		let saveElement = $("<button>")
 			.addClass("col saveBtn d-flex justify-content-center align-items-center")
 			.append($("<i>").addClass("fas fa-save"));
 
@@ -59,7 +59,7 @@ function init(hourStart, hourEnd) {
 	}
 }
 
-timeBlocksContainer.on("click", "div.saveBtn", function (event) {
+timeBlocksContainer.on("click", ".saveBtn", function (event) {
 	event.preventDefault();
 
 	let hour = $(event.target).closest(".time-block").children(".hour").text();
